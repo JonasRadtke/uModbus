@@ -36,7 +36,7 @@ In the program, only modbusSlaveCyclic(&modbusComm ,&modbusData) needs to be cal
 ## Adaptation to the hardware
 The adaption to the hadrware must be done in modbusio.c.
 
-* For every received byte call receiveModbusByte(&modbusComm, -received byte-) with the correspondig byte
-* In MBsendMessage() a function must be called to send a the buffer with a given length
-* MBcheckTimer() must return a 1 when a whole frame ist received. Modbus spec says after 3,5 Chars without a new char received the transmission ist completed
-* MBTimer() is used to wait this 3,5 chars. It's called in a 1ms Systemtimer. You can use your own function for that. It's only important to return the 1 in MBcheckTimer.
+* For every received byte call **receiveModbusByte(&modbusComm, -received byte-)** with the correspondig byte
+* In **MBsendMessage()** a function must be called to send a the buffer with a given length
+* **MBcheckTimer()** must return a 1 when a whole frame ist received. Modbus spec says after 3,5 Chars without a new char received the transmission ist completed
+* **MBTimer()** is used to wait this 3,5 chars. It's called in a 1ms Systemtimer. You can use your own function for that. It's only important to return the 1 in MBcheckTimer.
